@@ -71,6 +71,7 @@ const CATS = {
   // --- quest ---
   deathroot:      { color: '#c08080', r: 4, icon: 'death.png' },
   progression:    { color: '#c0a8d8', r: 4, icon: 'quest.png' },
+  missables:      { color: '#ff5a5a', r: 5, icon: 'quest.png' },
   seedbed_curses: { color: '#a080c0', r: 4, icon: 'curse.png' },
   // --- Elden Ring Reforged only ---
   ember_pieces:      { color: '#ff8a5a', r: 4, icon: 'ember_piece.png' },
@@ -776,7 +777,7 @@ function routeBlock(m) {
   // `.v` is filled by fillRoute once the popup is in the DOM - the description
   // is markup written by someone else and is never assigned as innerHTML.
   return '<div class="detail route">' +
-    `<span class="k">${escapeHtml(t('label.route'))}</span>` +
+    `<span class="k">${escapeHtml(t(tip.label || 'label.route'))}</span>` +
     `<span class="v"></span>${credit}</div>`;
 }
 

@@ -94,6 +94,7 @@ const STRINGS = {
     'cat.sorceries': 'Sorceries',
     'cat.deathroot': 'Deathroot',
     'cat.progression': 'Quest items',
+    'cat.missables': 'Missable rewards',
     'cat.seedbed_curses': 'Seedbed Curses',
     'cat.ember_pieces': 'Ember Pieces',
     'cat.items_and_changes': 'Added items',
@@ -126,6 +127,7 @@ const STRINGS = {
     'label.height': 'Height',
     'unit.m': 'm',
     'label.route': 'How to get there',
+    'label.missable': 'Locked off if',
     'label.via': 'via',
 
     'tip.found': 'found',
@@ -234,6 +236,7 @@ const STRINGS = {
     'cat.sorceries': 'Чародейства',
     'cat.deathroot': 'Корень смерти',
     'cat.progression': 'Квестовые предметы',
+    'cat.missables': 'Упускаемые награды',
     'cat.seedbed_curses': 'Проклятия ложа',
     'cat.ember_pieces': 'Осколки углей',
     'cat.items_and_changes': 'Добавленные предметы',
@@ -266,6 +269,7 @@ const STRINGS = {
     'label.height': 'Высота',
     'unit.m': 'м',
     'label.route': 'Как туда попасть',
+    'label.missable': 'Будет утеряно, если',
     'label.via': 'источник:',
 
     'tip.found': 'найдено',

@@ -1,0 +1,40 @@
+{
+  "_about": "Hand-curated: the game files have no notion of 'missable'. Each entry pins to an existing marker (`at`) and is checked off by hand. Add `flag` (an event flag id) to have the save tick it automatically.",
+  "missables": [
+    {
+      "id": "missable:magic-scorpion-charm",
+      "at": "poi:62345000",
+      "name": "Magic Scorpion Charm (Preceptor Seluvis)",
+      "lockedBy": "Seluvis is found dead once Ranni's quest reaches the Fingerslayer Blade. Get the charm from him before then.",
+      "source": "https://steamcommunity.com/sharedfiles/filedetails/?id=2780635040"
+    },
+    {
+      "id": "missable:gelmirs-fury",
+      "at": "poi:160000",
+      "name": "Gelmir's Fury (Bernahl's request)",
+      "lockedBy": "Defeating Rykard before finishing Bernahl's Volcano Manor request.",
+      "source": "https://www.dualshockers.com/elden-ring-missable-items/"
+    },
+    {
+      "id": "missable:takers-cameo",
+      "at": "poi:85505600",
+      "name": "Taker's Cameo (Volcano Manor, Juno Hoslow request)",
+      "lockedBy": "Defeating Rykard before completing the Volcano Manor requests, ending with Juno Hoslow.",
+      "source": "https://www.dualshockers.com/elden-ring-missable-items/"
+    },
+    {
+      "id": "missable:shard-of-alexander",
+      "at": "poi:130000",
+      "name": "Shard of Alexander (Iron Fist Alexander)",
+      "lockedBy": "Killing Alexander, or not finishing his questline.",
+      "source": "https://www.dualshockers.com/elden-ring-missable-items/"
+    },
+    {
+      "id": "missable:rotten-winged-sword-insignia",
+      "at": "poi:150001",
+      "name": "Rotten Winged Sword Insignia (Millicent)",
+      "lockedBy": "Not helping Millicent against her sisters at Elphael.",
+      "source": "https://www.dualshockers.com/elden-ring-missable-items/"
+    }
+  ]
+}

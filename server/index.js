@@ -58,7 +58,7 @@ function findSave() {
   try {
     for (const dir of fs.readdirSync(base)) {
       if (!/^\d+$/.test(dir)) continue;
-      for (const ext of ['err', 'sl2']) {
+      for (const ext of ['err', 'co2', 'sl2']) {
         const p = path.join(base, dir, `ER0000.${ext}`);
         try {
           const st = fs.statSync(p);
@@ -121,6 +121,26 @@ const itemData = loadJson(path.join(DATA, 'items.json'), { markers: [] });
 const pieceData = loadJson(path.join(DATA, 'pieces.json'), { markers: [] });
 const MARKERS = [...(markerData.markers || []), ...(itemData.markers || []),
                  ...(pieceData.markers || [])];
+
+/**
+ * Missables (data/missables.json, hand-curated): quest rewards that a death or
+ * a boss kill can lock off. They have no position of their own, so each pins
+ * to an existing marker and borrows its spot, nudged so two on one place don't
+ * stack. Checked off by hand unless the entry carries an event `flag`.
+ */
+const anchors = new Map(MARKERS.map((m) => [m.id, m]));
+const stacked = new Map();
+for (const e of loadJson(path.join(DATA, 'missables.json'), { missables: [] }).missables) {
+  const at = anchors.get(e.at);
+  if (!at) { console.warn(`missables: ${e.id} pins to unknown marker ${e.at}`); continue; }
+  const n = stacked.get(e.at) || 0;
+  stacked.set(e.at, n + 1);
+  MARKERS.push({
+    id: e.id, cat: 'missables', names: { en: e.name }, flag: e.flag,
+    px: at.px + 14 * (n + 1), py: at.py, h: at.h, master: at.master, map: at.map,
+    tip: { label: 'label.missable', text: e.lockedBy, credit: e.source && new URL(e.source).hostname, link: e.source },
+  });
+}
 const FLAG_MARKERS = MARKERS.filter((m) => m.flag || (m.flags && m.flags.length));
 
 /**
